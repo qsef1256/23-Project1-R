@@ -1,5 +1,83 @@
 # 602377121 전정환
 
+## 2023-04-06
+
+### 매트릭스
+
+#### 생성
+
+```r
+score = matrix(c(90,85,60,78,60,55,23,13,55,78,99,40), nrow=4)
+matrix(1:20,4,5)
+rownames(score) = c("John", "Doe", "Mark", "Jame")
+colnames(score) = c("English", "Math", "Science")
+colnames(score)[2]
+```
+
+#### 기본 정보 보기
+
+```r
+dim(score) : 행과 열의 개수 보이기
+head(score) : 앞부분 일부 보기
+tail(score) : 뒷부분 일부 보기
+```
+
+#### 합계 및 평균
+
+```r
+colSums(iris[,-5])
+colMeans(iris[,-5])
+rowSums(iris[,-5])
+rowMeans(iris[,-5])
+```
+
+#### 값 추출
+
+```r
+IR.1 = subset(iris, Species="setosa")
+```
+
+#### 구조 확인
+
+```r
+class(iris)
+is.matrix(iris)
+is.data.frame(iris)
+```
+
+#### 구조 변환
+
+```r
+data.frame(iris)
+as.martix(iris[,1:4])
+```
+
+#### 출력
+
+```r
+print(iris)
+cat(x, '\n')
+```
+
+### 데이터셋
+* iris 셋: 붗꽃 샘플 데이터
+
+### 파일 입출력
+
+#### csv
+
+```r
+getwd() : 작업 폴더 알아내기
+setwd('C:\RWorks') 작업 폴더 설정하기
+air = read.csv('airquality.csv', header = T)
+```
+
+#### xlsx
+
+```r
+read.xlsx("air.xlsx", header = T, sheetIndex = 1)
+```
+
 ## 2023-03-30
 
 ### 함수
