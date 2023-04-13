@@ -1,5 +1,75 @@
 # 602377121 전정환
 
+## 2023-04-13
+
+### 파일 입출력
+
+```r
+sink('result.txt', append = T) # 파일로 입력 시작
+sink()                         # 파일로 입력 중지
+```
+
+```r
+read.table('data.txt', header = T, sep = ' ')
+```
+
+### 조건문
+
+```r
+job.type = 'A'
+if (job.type == 'B') {
+    bonus = 200
+} else {
+    bonus = 100
+}
+print(bonus)
+```
+
+```r
+ifelse(a>b, a, b)
+```
+
+```r
+which(score==69)
+which(score>=85)
+which.min(score)
+```
+
+### 반복문
+
+```r
+sum = 0
+for (i in 1:100) {
+    sum = sum + i
+}
+print(sum)
+```
+
+```r
+while(T) {
+    print('infinity')
+}
+```
+
+### apply
+
+```r
+apply(iris[,1:4], 1, mean) # 행 방향으로 함수 적용
+apply(iris[,1:4], 2, mean) # 열 방향으로 함수 적용
+```
+
+### 함수
+
+```r
+source('ss.R')
+
+myfunc = function(x, y) {
+    val.sum = x + y
+    val.mul = x * y
+    return (list(val.sum, val.mul))
+}
+```
+
 ## 2023-04-06
 
 ### 매트릭스
