@@ -1,5 +1,47 @@
 # 602377121 전정환
 
+## 2023-04-27
+
+### 막대 그래프
+
+```r
+favorite = c('winter', 'summer', 'spring', 'fall')
+ds <- table(favorite)
+barplot(ds, main = 'Favorite Season', col = 'blue', names=c('가을','봄','겨울','여름'), las=3)
+```
+
+```r
+age.A = c(13709,10974,7879,5000,4250)
+age.B = c(13709,10974,7879,5000,4250)
+age.C = c(13709,10974,7879,5000,4250)
+ds = rbind(age.A, age.B, age.C)
+colnames(ds) = c('1970','1990','2010','2030','2050')
+ds
+
+barplot(ds, main='인구 추정')
+```
+
+### 히스토그램
+
+```r
+head(cars)
+dist = cars[,2]
+hist(dist, name = 'cars')
+
+hist(iris.Sepal.Lengh,main='Sepal.length',col='orange')
+
+pie(table(mtcars$cy1), main'mtcars', col=topo.colors(3), radius=2)
+par(mfrow=c(1,1), mar=c(5,4,4,3)+1) # 화면 분할
+```
+
+### 그래프
+
+```r
+install.packages('plotrix')
+
+pie3D(ds, main="선호 계절", col = c('brown','green','red','yellow'), radius=1)
+```
+
 ## 2023-04-13
 
 ### 파일 입출력
