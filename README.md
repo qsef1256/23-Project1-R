@@ -1,5 +1,92 @@
 # 602377121 전정환
 
+## 2023-05-04
+
+### 선 그래프
+
+```r
+month = 1:12
+late = c(5,8,7,9,4,6,12,13,8,6,6,4)
+late2 = c(5,7,4,3,5,2,6,6,3,5,2,3)
+plot(month, # x data
+    late, # y data
+    main='지각생 통계',
+    type='l', # 그래프 종류
+    lty=1, # 선 종류
+    lwd=1, # 선 굵기
+    xlab'Month',
+    ylab='Late cnt')
+lines(month, late2, type='b',col='blue')
+```
+
+### 상자 그림
+
+```r
+dist = cars[,2]
+boxplot(dist, main='자동차 제동거리')
+```
+
+### 산점도
+
+```r
+wt = mtcars$wt
+mpg = mtcars$mpg
+plot(wt, mpg, 
+    main='중량-연비 그래프',
+    xlab='중량',
+    ylab='연비',
+    col='red',
+    pch=19)
+```
+
+* 다중 산점도
+
+```r
+vars = c('mpg','disp','draw','wt')
+target = mtcars[,cars]
+head(target)
+plot(target, main='Multi plots')
+```
+
+
+```r
+iris.2 = iris[,3:4]
+levels(iris$Species)
+group = as.numeric(iris$Species)
+color = c('red','green','blue')
+plot(iris.2,
+    main = 'iris plot',
+    pch=c(group),
+    col=color[group])
+```
+
+### 데이터 분석의 절차
+
+1. 문제 정의 및 계획
+2. 데이터 수집
+3. 데이터 정제 및 전처리
+4. 데이터 탐색
+5. 데이터 분석
+6. 결과 보고
+
+### 분석 도구
+
+* 단일 변수: 1개의 변수
+  - 도수분포표
+  - 막대그래프
+  - 원그래프
+  - 히스토그램
+  - 선그래프
+  - 상자 그림
+
+* 다중 변수: 2개 이상의 변수
+  - 매트릭스
+  - 데이터 프레임
+  - 산점도
+  - 상관계수
+  - 나무지도
+  - 방사형차트
+
 ## 2023-04-27
 
 ### 막대 그래프
