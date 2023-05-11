@@ -1,5 +1,85 @@
 # 602377121 전정환
 
+## 2023-05-11
+
+### 열 쓰기
+
+```r
+data$column
+```
+
+### 두 변수의 상관관계
+
+* 상관계수: 상관 관계를 수치로 나타낸 -1에서 1의 값
+  * `0` 인 경우, X, Y 사이는 상관성을 찾기 어려움
+  * `+` 인 경우 X, Y가 반비례, 음의 상관 관계
+  * `-` 인 경우 X, Y가 비례, 양의 상관 관계
+
+* 함수: `cor()`
+* 상관관계 != 인과관계
+
+```r
+plot(pressure$temperature,
+    pressure$pressure,
+    main = '온도와 기압',
+    xlab = '온도(화씨)',
+    ylab = '기압')
+```
+
+### 여러 변수의 상관관계
+
+```r
+st = data.frame(state.x77)
+
+head(st)
+plot(st)
+cor(st)
+```
+
+### 데이터 전처리
+
+- 확보한 데이터를 가공하여 분석에 적합한 형태로 만드는 과정
+- 현실에서는 정리된 데이터 셋을 바로 얻는 경우가 많지 않음
+
+### 결측값의 처리
+
+- 결측값: 수집되지 않았거나 잘못 측정된 값 (NA로 표현)
+- 처리 방법: 
+
+1. 제거/제외
+
+```r
+z = c(1,2,3,NA,5,NA,8)
+
+sum(z)             # 오류
+is.na(z)           # NA 여부 확인
+sum(is.na(z))      # NA 개수 확인
+sum(z, na.rm=TRUE) # NA 삭제 후 sum
+```
+
+2. 추정/치환
+
+```r
+z1 = c(1,2,3,NA,5,NA,8)
+z2 = c(5,8,3,NA,3,NA,7)
+
+z1[is.na(z1)] = 0           # NA를 0으로 치환
+z3 = as.vector(na.omit(z2)) # NA를 제거하고 새로운 벡터를 생성
+```
+
+```r
+for (i in 1:ncol(x)) {
+    this.na = is.na(x, [i])
+    cat(colnames(x)[i], '\t', sum(this.na), '\n')
+}
+```
+
+```r
+rowSums(is.na(x))
+sum(rowSums(is.na(x)) > 0)
+sum(is.na(x))
+```
+
 ## 2023-05-04
 
 ### 선 그래프
