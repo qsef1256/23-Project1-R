@@ -1,5 +1,73 @@
 # 602377121 전정환
 
+## 2023-05-18
+
+### 정렬
+
+```r
+v1 = c(1,7,6,8,4,5,3,2)
+v1
+v1 = sort(v1) # 값 정렬 함수
+v1
+
+v2 = sort(v1, decreasing=T)
+v2
+```
+
+```r
+order(v1) # 인덱스 정렬 함수
+iris[order(iris$Sepal.Length),] # 오름차순 정렬
+iris[]
+```
+
+### 샘플링
+
+임의 추출을 하되 재현 가능한 결과가 필요한 경우 샘플링을 시행
+
+```r
+sample(1:20, size = 5)
+```
+
+```r
+x = 1:100
+y = sample(x , size=10, replace=FALSE)
+y
+idx = sample(1:nrow(iris), size=50, replace=F)
+iris.50 = iris[idx,]
+dim(iris.50)
+```
+
+### 조합
+
+주어진 데이터 값에서 몇 개씩 짝을 지어 추출하는 작업, `combn()` 함수 사용
+
+```r
+combn(1:5, 3) # 1~5 에서 3개를 뽑는 조합
+```
+
+### 집계
+
+```r
+aggregate(iris[,-5], by=list(iris$Species), FUN=mean)
+```
+
+### 나무지도
+
+```r
+install.packages("treemap")
+library("treemap")
+
+data(GNI2014)
+head(GNI2014)
+
+treemap(GNI2014, 
+  index = c("continent", "iso3"),
+  vSize="population",
+  vColor="GNI",
+  type="value",
+  title="World's GNI")
+```
+
 ## 2023-05-11
 
 ### 열 쓰기
