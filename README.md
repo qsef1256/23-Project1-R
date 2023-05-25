@@ -1,5 +1,60 @@
 # 602377121 전정환
 
+## 2023-05-25
+
+### 방사형 차트
+
+다중 변수 데이터를 2차원 평면상에 시각화 할 수 있는 도구
+
+`fmsb` 패키지 설치 필요
+
+```r
+install.packages('fmsb')
+library(fmsb)
+
+score = c(80,60,70,80,50)
+min.score = rep(100, 5)
+max.score = rep(0, 5)
+
+ds = rbind(max.score, min.score, score)
+ds = data.frame(ds)
+colname(cs) = c("국어", "영어", "수학", "물리", "음악")
+
+radarchart(ds)
+```
+
+```r
+radarchart(ds,
+  pcol='dark green',
+  pfcol=rgb(0.2,0.5,0.5.0.5),
+  plwd=3,
+  cglcol='grey',
+  cglty=1,
+  cglwd=0.1,
+  axisype=1,
+  seg=4,
+  axislabcol='grey',
+  caxislabels=seq(0,100,25))
+```
+
+### ggplot
+
+라이브러리명: `ggplot2`
+
+### 텍스트 마이닝
+
+관계가 없어보이는 데이터에서 관계를 찾아 시각화
+
+```r
+install.packages('wordcloud')
+library(wordcloud)
+
+word = c("홍길동", "강감찬", "이순신", "유관순", "을지문덕")
+frequency = c(851, 222, 431, 234, 542)
+
+wordcloud(word, frequency, colors = rainbow(length(word)))
+```
+
 ## 2023-05-18
 
 ### 정렬
